@@ -1,0 +1,70 @@
+// ┌────────────────────────────┐
+// │ Calcite Panel - Theme Dark │
+// └────────────────────────────┘
+//
+// Dark background, light text
+// Styles for text color, hover and background for panels and controls
+
+.calcite-panels {
+  
+  &.calcite-bg-dark {
+
+    .panel-heading {
+      background-color: $theme_dark_panel_header_bg;
+    }
+
+    .panel-heading:hover {
+      background-color: $theme_dark_panel_header_bg_hover;
+    }
+    
+  }
+
+  &.calcite-text-light {
+
+    // .panel {
+    //   color: $theme_dark_panel_text_color;
+    // }
+    
+    // Header
+    
+    .panel-heading {
+      color: $theme_dark_panel_header_text_color;
+    }
+          
+    // Toggle header
+    
+    .panel-toggle {
+      color: $theme_dark_panel_header_text_color;
+    }
+    
+    .panel-toggle:focus,
+    .panel-toggle:hover {
+      color: $theme_dark_panel_header_text_color;
+    }
+    
+    // Close
+
+    .panel-close {
+      color: $theme_dark_panel_header_close_color;
+    }
+
+    .panel-close:focus, 
+    .panel-close:hover {
+      color: $theme_dark_panel_header_text_color_hover;
+    }
+    
+  }
+}
+
+@media (max-width: $panels_breakpoint_width_mobile) {
+  .calcite-nav-bottom {
+    .calcite-bg-dark {
+      .panel-body {
+        border-bottom: 1px solid $theme_dark_panel_header_bg;
+      }
+    }
+  }  
+}
+
+
+  

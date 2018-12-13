@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.8/esri/copyright.txt for details.
+//>>built
+define(["require","exports","./gl-matrix"],function(c,p,n){var k=n.vec3d;c=function(){function b(a,b){this._origins=[];this._boxSize=a;this._maxNumOrigins=b}b.prototype.getOrigin=function(g){for(var d=this._origins.length,e,c=!1,l=Number.MAX_VALUE,h=0;h<d;h++){var f=this._origins[h];k.subtract(g,f.vec3,a);a[0]=Math.abs(a[0]);a[1]=Math.abs(a[1]);a[2]=Math.abs(a[2]);var m=a[0]+a[1]+a[2];m<l&&(e=f,l=m,c=a[0]<this._boxSize&&a[1]<this._boxSize&&a[2]<this._boxSize)}c||e&&null!=this._maxNumOrigins&&!(this._origins.length<
+this._maxNumOrigins)||(d=b.OFFSET,f=[g[0]+d,g[1]+d,g[2]+d],e={vec3:f,id:this.getOriginId(f)},this._origins.push(e));return e};b.prototype.getOriginId=function(a){return""+b.ORIGIN_PREFIX+a[0]+"/"+a[1]+"/"+a[2]};b.OFFSET=1.11;b.ORIGIN_PREFIX="fb_";return b}();var a=k.create();return c});

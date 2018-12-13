@@ -1,0 +1,165 @@
+// ┌──────────────────────┐
+// │ Esri Leaflet Support │
+// └──────────────────────┘
+//
+// Overrides for widgets for different layouts
+
+// Calcite icons - remove padding
+
+[class^="esri-icon-"]:before, 
+[class*=" esri-icon-"]:before, 
+[class^="icon-ui-"]:before, 
+[class*=" icon-ui-"]:before {
+  padding: 0;
+  line-height: 1;
+}
+
+.calcite-navbar-search {
+  margin-top: 15px;
+}
+
+.calcite-panels {
+  z-index: 1000;
+}
+
+// Zoom Control
+
+.calcite-map {
+  .leaflet-control-zoom.leaflet-control {
+    margin: 15px 15px 30px 15px;
+  }
+
+  .leaflet-control-zoom.leaflet-bar > a {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 0;
+  }
+}
+
+// Navbar top
+
+.calcite-nav-top {
+  .calcite-map {
+    .leaflet-control-zoom  {
+      margin-top: 65px;
+    }
+  }
+}
+
+.calcite-nav-top.calcite-margin-top,
+.calcite-nav-top.calcite-margin-all {
+  .calcite-map {
+    .leaflet-control-zoom {
+      margin-top: 80px;
+    }
+  }
+} 
+
+// Navbar bottom
+
+.calcite-nav-bottom,
+.calcite-nav-bottom-fixed {
+  .calcite-map {
+    .leaflet-control-zoom  {
+      margin-top: 30px;
+    }
+  }
+}
+
+// Logo 
+
+.calcite-map {
+
+  .esri-leaflet-logo.leaflet-control {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 16px 2px !important;
+  }
+
+  .esri-leaflet-logo > a > img {
+    max-width: 43px !important;
+  }
+
+  // Attribution
+
+  .leaflet-control-attribution {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    line-height: 15px;
+  }
+}
+
+.calcite-nav-bottom,
+.calcite-nav-bottom-fixed {
+  .leaflet-control-attribution,
+  .esri-leaflet-logo.leaflet-control {
+    top: 0;
+    bottom: auto;
+  }
+}
+
+// Search Control
+
+.geocoder-control .geocoder-control-input {
+  padding: 7px;
+  box-shadow: none;
+  border-radius: 0;
+  border: 1px #959595 solid;
+}
+
+.geocoder-control .geocoder-control-suggestions {
+  box-shadow: none;
+  border-radius: 0;
+  border: 1px solid #ccc;
+}
+
+.calcite-navbar {
+  .geocoder-control {
+    margin-top: 0;
+  }
+}
+
+.calcite-panels {
+  .geocoder-control {
+    margin: 4px 0 6px;
+    width: 100%;
+    .geocoder-control-input {
+      padding: 9px;
+    }
+    .geocoder-control-suggestions .geocoder-control-suggestion {
+      color: #000;
+    }
+  }
+}
+
+.calcite-nav-bottom .geocoder-control-suggestions.leaflet-bar,
+.calcite-nav-bottom-fixed .geocoder-control-suggestions.leaflet-bar {
+  top: auto;
+  bottom: 101%;
+}
+
+// Popup Control
+
+.calcite-map {
+  .leaflet-popup-content-wrapper {
+    border-radius: 0;
+  }
+  .leaflet-popup-content {
+    min-width: 100px;
+  }
+}
+
+// Mobile screens
+
+// @media(max-width: 767px) {
+
+//   .calcite-maps {
+
+//   }
+// }

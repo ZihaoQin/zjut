@@ -1,0 +1,6 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.8/esri/copyright.txt for details.
+//>>built
+define("require exports ./adapters/CSVLayerAdapter ./adapters/FeatureLayerAdapter ./adapters/LayerAdapter ./adapters/PointCloudLayerAdapter ./adapters/SceneLayerAdapter ../../../support/arcadeUtils".split(" "),function(n,b,f,g,h,k,l,m){Object.defineProperty(b,"__esModule",{value:!0});var c,e=(c={},c[0]={adapter:f,type:"csv",label:"CSVLayer"},c[1]={adapter:g,type:"feature",label:"FeatureLayer"},c[2]={adapter:l,type:"scene",label:"SceneLayer"},c[3]={adapter:k,type:"point-cloud",label:"PointCloudLayer"},
+c);b.getLayerTypeLabels=function(a){return a.map(function(a){return e[a].label})};b.createLayerAdapter=function(a,d){if(a instanceof h)return a;var c=null;d.some(function(d){var b=a.type===e[d].type;b&&(c=new e[d].adapter({layer:a}));return b});return c};b.getFieldsList=function(a){var d=a.field,c=a.normalizationField;a=a.valueExpression;var b=[];a&&(b=m.extractFieldNames(a));d&&b.push(d);c&&b.push(c);return b};b.getNormalizationType=function(a){var b=a.normalizationType;b||(a.normalizationField?
+b="field":null!=a.normalizationTotal&&(b="percent-of-total"));return b}});

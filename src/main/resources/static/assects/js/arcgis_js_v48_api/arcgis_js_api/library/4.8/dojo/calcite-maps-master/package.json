@@ -1,0 +1,42 @@
+{
+  "name": "calcite-maps",
+  "version": "0.9.0",
+  "description": "Web map app design framework",
+  "main": "\"\"",
+  "dependencies": {
+    "grunt-cli": "^0.1.13",
+    "npm": "^6.4.1"
+  },
+  "devDependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "grunt": "^0.4.5",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-copy": "^0.8.2",
+    "grunt-contrib-cssmin": "^0.14.0",
+    "grunt-contrib-uglify": "^0.11.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-sass": "^1.1.0",
+    "matchdep": "^1.0.0",
+    "node-sass": "^3.4.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alaframboise/calcite-maps.git"
+  },
+  "keywords": [
+    "Map",
+    "App",
+    "Web",
+    "Framework",
+    "Bootstrap"
+  ],
+  "author": "Allan Laframboise",
+  "license": "Apache2",
+  "bugs": {
+    "url": "https://github.com/alaframboise/calcite-maps/issues"
+  },
+  "homepage": "https://github.com/alaframboise/calcite-maps#readme"
+}

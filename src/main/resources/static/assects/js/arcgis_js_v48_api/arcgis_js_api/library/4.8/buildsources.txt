@@ -1,0 +1,3 @@
+arcgis-js-api.git
+origin/4.8-release
+e18c0432c09c7059866c86385a8922e67fbb6d1e

@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.8/esri/copyright.txt for details.
+//>>built
+define({title:"M\u00e9r\u00e9s",hint:"A m\u00e9r\u00e9st \u00fagy kell elkezdeni, hogy bele kell kattintani a 3D t\u00e9rk\u00e9pbe az els\u0151 pont elhelyez\u00e9s\u00e9hez.",unsupported:"A ter\u00fcletm\u00e9r\u00e9st nem t\u00e1mogatja a MapView.",perimeterLength:"Ker\u00fclet",area:"Ter\u00fclet",unit:"M\u00e9rt\u00e9kegys\u00e9g",notApplicable:"\u2013",newMeasurement:"\u00daj m\u00e9r\u00e9s",units:{metric:"Metrikus",imperial:"Angolsz\u00e1sz","square-kilometers":"n\u00e9gyzetkilom\u00e9ter",
+"square-meters":"n\u00e9gyzetm\u00e9ter","square-miles":"n\u00e9gyzetm\u00e9rf\u00f6ld","square-inches":"n\u00e9gyzeth\u00fcvelyk","square-feet":"n\u00e9gyzetl\u00e1b","square-yards":"n\u00e9gyzetyard","square-us-feet":"N\u00e9gyzetl\u00e1b (US)",acres:"acre",ares:"\u00e1r",hectares:"hekt\u00e1r"}});

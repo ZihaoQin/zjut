@@ -1,0 +1,108 @@
+// ┌──────────────────┐
+// │ Calcite Dropdown │
+// └──────────────────┘
+//
+// Styling for nav dropdown
+
+// Navbar - Top 
+
+// Default
+
+.calcite-nav-top,
+.calcite-nav-top-fixed {
+  .calcite-dropdown .dropdown-menu {
+    top: 100%;
+    bottom: auto;
+  }
+}
+
+// Menu drawer
+
+.calcite-nav-top,
+.calcite-nav-top-fixed {
+  .calcite-dropdown {
+		.calcite-menu-drawer {
+	    top: $navbar_height;
+	    bottom: 0; // $map_attribution_height
+	  }
+	}
+}
+
+.calcite-nav-top.calcite-margin-top, 
+.calcite-nav-top.calcite-margin-all {
+  .calcite-dropdown {
+		.calcite-menu-drawer  {
+    	top: $navbar_height + $base_ui_margin;
+    	bottom: 0; // $map_attribution_height
+    }
+	}
+}
+
+// Navbar - Bottom
+
+// Default
+
+.calcite-nav-bottom,
+.calcite-nav-bottom-fixed {
+  .calcite-dropdown .dropdown-menu {
+   	top: auto;
+   	bottom: 100%;
+  }
+}
+
+// Mernu drawer
+
+.calcite-nav-bottom,
+.calcite-nav-bottom-fixed {
+  .calcite-dropdown {
+		.calcite-menu-drawer {
+	  	top: 0; // $map_attribution_height
+	    bottom: $navbar_height;
+	  }
+	}
+}
+
+.calcite-nav-bottom.calcite-margin-bottom,
+.calcite-nav-bottom.calcite-margin-all {
+  .calcite-dropdown {
+		.calcite-menu-drawer  {
+  		top: 0; // $map_attribution_height
+    	bottom: $navbar_height + $base_ui_margin;
+    }
+	}
+}
+
+// Mobile screens
+
+@media (max-width: $panels_breakpoint_width_mobile) {
+	
+	// Menu drawer - no drawer in mobile!
+
+	// .calcite-nav-top,
+	// .calcite-nav-top-fixed,
+	// .calcite-nav-top.calcite-margin-top, 
+	// .calcite-nav-top.calcite-margin-all {
+	//   .calcite-dropdown {
+	//   	&.calcite-dropdown-drawer .dropdown-menu {
+	// 	    top: 100%;
+	// 	    bottom: auto;
+	// 	    max-height: none;
+	// 	  }
+	// 	}
+	// }
+
+	// .calcite-nav-bottom,
+	// .calcite-nav-bottom-fixed,
+	// .calcite-nav-bottom.calcite-margin-top, 
+	// .calcite-nav-bottom.calcite-margin-all {
+	//   .calcite-dropdown {
+	//   	&.calcite-dropdown-drawer .dropdown-menu {
+	//   		position: absolute;
+	// 	    top: 100%;
+	// 	    bottom: auto;
+	// 	    max-height: none;
+	// 	  }
+	// 	}
+	// }
+
+}

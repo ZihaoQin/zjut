@@ -1,0 +1,124 @@
+// ┌─────────────────────────────┐
+// │ Calicte Navbar - Theme Dark │
+// └─────────────────────────────┘
+//
+// Dark background, light text
+// Styles for navbar and dropdown menu
+  
+.calcite-navbar {
+
+  // Navbar (for dark theme)
+
+  &.calcite-bg-dark {
+    &.navbar {
+      background-color: $theme_dark_navbar_bg;
+    }
+  }
+
+  &.calcite-text-light {
+
+    // Brand
+    
+    .navbar-brand {
+      color: $theme_dark_navbar_text_color;
+    }
+
+    .navbar-brand:hover,
+    .navbar-brand:focus {
+      @include linear-gradient(to top, $navbar_decoration_trans_percentage, $theme_dark_navbar_text_color_hover);
+      transition: color 150ms linear, text-decoration 150ms linear;
+    }
+
+    // Title
+
+    .calcite-title-main {         
+      color: $theme_dark_navbar_text_color;
+    } 
+
+    .calcite-title-divider {         
+      color: $theme_dark_navbar_text_color_secondary;
+      opacity: $theme_all_navbar_opacity;
+    } 
+
+    .calcite-title-sub {         
+      color: $theme_dark_navbar_text_color_secondary;
+    } 
+    
+    // Optional
+    //.calcite-title:hover, 
+    //.calcite-title:focus {
+      // color: $theme_dark_nav_bg_hover;
+    //}
+    
+    // Toggle button
+
+    .dropdown-toggle .icon-bar {
+      background-color: $theme_dark_navbar_text_color;
+    }
+
+    .dropdown-toggle:hover,
+    .dropdown-toggle:focus {
+      @include linear-gradient(to top, $navbar_decoration_trans_percentage, $theme_dark_navbar_text_color_hover);
+      transition: color 150ms linear, text-decoration 150ms linear;
+    }
+
+    // Toggle menu animated
+    
+    .calcite-dropdown-toggle span {
+      background-color: $theme_dark_control_text_color;
+    }
+
+    // Nav
+    
+    .navbar-nav > li > a {
+      color: $theme_dark_navbar_text_color;
+    }
+    
+    .navbar-nav > li > a:hover,
+    .navbar-nav > li > a:focus,
+    .navbar-nav > .active > a,
+    .navbar-nav > .active > a:focus,
+    .navbar-nav > .active > a:hover,
+    .navbar-nav > .open > a,
+    .navbar-nav > .open > a:hover,
+    .navbar-nav > .open > a:focus  {
+      color: $theme_dark_navbar_text_color_hover;
+      background-color: transparent;
+      @include linear-gradient(to top, $navbar_decoration_trans_percentage, $theme_dark_navbar_text_color_hover);
+      transition: color 150ms linear, text-decoration 150ms linear;
+    }
+
+    .navbar-nav > .disabled > a,
+    .navbar-nav > .disabled > a:hover,
+    .navbar-nav > .disabled > a:focus {
+      color: $theme_dark_navbar_text_color_disabled;
+      background-color: transparent;
+    }
+  }
+}
+
+// Nav bottom - decoration (for dark theme)
+
+.calcite-nav-bottom,
+.calcite-nav-bottom-fixed {
+
+  .calcite-navbar {
+
+    &.calcite-text-light {
+      .navbar-brand:hover,
+      .navbar-brand:focus,
+      .navbar-nav > li > a:hover,
+      .navbar-nav > li > a:focus,
+      .navbar-nav > .active > a,
+      .navbar-nav > .active > a:focus,
+      .navbar-nav > .active > a:hover,
+      .navbar-nav > .open > a,
+      .navbar-nav > .open > a:hover,
+      .navbar-nav > .open > a:focus,
+      .dropdown-toggle:hover,
+      .dropdown-toggle:focus {
+        @include linear-gradient(to bottom, $navbar_decoration_trans_percentage, $theme_dark_navbar_text_color_hover);
+      }
+    }
+  }
+}

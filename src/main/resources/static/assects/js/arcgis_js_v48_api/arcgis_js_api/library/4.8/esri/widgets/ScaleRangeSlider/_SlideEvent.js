@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See https://js.arcgis.com/4.8/esri/copyright.txt for details.
+//>>built
+define(["../../core/declare"],function(d){return d(null,{declaredClass:"esri.dijit.ScaleRangeSlider._SlideEvent",_events:["onMouseMove","onFirstMove",{name:"onMoveStop",hookTo:"destroy"}],postCreate:function(){this.inherited(arguments);this._extendMover(this._movable);this._extendMover(this._movableBar,"rangebar");this._extendMover(this._movableMax,"max")},_extendMover:function(e,d){if(e){var f=e.mover,g={};this._events.forEach(function(b){var c,a,k,l,h,m;"object"===typeof b?(a=b.name,c=b.hookTo):
+a=b;k=f.prototype[a]||function(){};l="slide"+(d||"")+"-"+a.toLowerCase();h=function(){k.apply(this,arguments);this.widget.emit(l,{movable:e})};c&&(m=f.prototype[c],g[c]=function(){m.apply(this,arguments);h.apply(this,arguments)});g[a]=h});f.extend(g)}}})});

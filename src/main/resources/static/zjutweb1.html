@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>三维校园</title>
+    <!-- Calcite Bootstrap -->
+    <link rel="stylesheet" href="assects/calcite-maps-master/dist/css/calcite-maps-bootstrap.min-v0.8.css">
+
+    <!-- Calcite Maps -->
+    <link rel="stylesheet" href="assects/calcite-maps-master/dist/css/calcite-maps-arcgis-4.x.min-v0.8.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/echarts.js"></script>
+    <!-- ArcGIS JS 4 -->
+    <link rel="stylesheet" href="assects/js/arcgis_js_v48_api/arcgis_js_api/library/4.8/esri/css/main.css">
+    <script src="assects/js/arcgis_js_v48_api/arcgis_js_api/library/4.8/init.js"></script>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #clock {
+            width: 220px;
+            height: 220px;
+        }
+    </style>
+    <link rel="stylesheet" href="css/global.css">
+    <script src="js/slide.js"></script>
+
+</head>
+<body class="calcite-maps calcite-nav-top">
+<!-- Navbar -->
+
+<nav class="navbar calcite-navbar navbar-fixed-top calcite-text-light calcite-bg-dark">
+    <!-- Menu -->
+    <div class="dropdown calcite-dropdown calcite-text-dark calcite-bg-light"
+         role="presentation">
+        <a class="dropdown-toggle" role="button" aria-haspopup="true"
+           aria-expanded="false">
+            <div class="calcite-dropdown-toggle">
+                <span class="sr-only">Toggle dropdown menu</span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a class="hidden-md hidden-lg" href="#mapTab"
+                                  aria-controls="mapTab" role="tab" data-toggle="tab"> 2D</a></li>
+            <li class="active"><a class="hidden-md hidden-lg" href="#sceneTab" aria-controls="sceneTab"
+                   role="tab" data-toggle="tab"> 3D</a></li>
+            <li><a role="button" data-target="#PowerPoint" aria-haspopup="true"><span
+                    class="glyphicon glyphicon-film"></span> 幻灯片</a></li>
+            <li><a role="button" data-target="#Hawkeye" aria-haspopup="true"><span
+                    class="glyphicon glyphicon-map-marker"></span> 鹰眼</a></li>
+            <li><a role="button" data-target="#Roaming" aria-haspopup="true"><span
+                    class="glyphicon glyphicon-globe"></span> 漫游</a></li>
+            <li><a role="button" data-target="#panelSettings" aria-haspopup="true"><span
+                    class="glyphicon glyphicon-cog"></span> 设置</a></li>
+            <li><a role="button" id="calciteToggleNavbar" aria-haspopup="true"><span
+                    class="glyphicon glyphicon-fullscreen"></span> 全屏</a></li>
+        </ul>
+    </div>
+    <!-- Title -->
+    <div class="calcite-title calcite-overflow-hidden">
+        <span class="calcite-title-main" style="font-family: '楷体'">浙江工业大学</span>
+        <span class="calcite-title-divider hidden-xs"></span>
+        <span class="calcite-title-sub hidden-xs">智慧校园WebGIS分析服务系统</span>
+    </div>
+    <!-- Nav -->
+    <ul class="nav navbar-nav calcite-nav">
+        <li><a id="mapNav" class="hidden-xs hidden-sm" href="#mapTab"
+                              aria-controls="mapTab" aria-expanded="true" role="tab" data-toggle="tab"
+                              data-tooltip="tip" title="2D View" data-placement="bottom">2D</a></li>
+        <li class="active"><a id="sceneNav" class="hidden-xs hidden-sm" href="#sceneTab"
+               aria-controls="sceneTab" role="tab" data-toggle="tab" data-tooltip="tip"
+               title="3D View" data-placement="bottom">3D</a></li>
+        <li>
+            <div class="calcite-navbar-search calcite-search-expander">
+                <div id="searchWidgetDiv"></div>
+            </div>
+        </li>
+    </ul>
+</nav>
+<!--/.calcite-navbar -->
+
+<!-- 底图容器  -->
+<div class="calcite-map calcite-map-absolute">
+    <div id="tabContainer" class="tab-content">
+        <div id="mapTab" class="tab-pane fade" role="tabpanel">
+            <div id="mapViewDiv"></div>
+        </div>
+        <div id="sceneTab" class="tab-pane fade  in active" role="tabpanel">
+            <div id="sceneViewDiv"></div>
+        </div>
+    </div>
+</div>
+
+<!-- 面板 -->
+<div class="calcite-panels calcite-panels-right calcite-text-light calcite-bg-dark panel-group">
+
+    <!-- PowerPoint -->
+
+    <div id="PowerPoint" class="panel collapse">
+        <div id="headingPowerPoint" class="panel-heading" role="tab">
+            <div class="panel-title">
+                <a class="panel-toggle collapsed" role="button" data-toggle="collapse"
+                   href="#collapsePowerPoint" aria-expanded="false" aria-controls="collapsePowerPoint"><span
+                        class="glyphicon glyphicon-film" aria-hidden="true"></span><span
+                        class="panel-label">幻灯片</span></a>
+                <a class="panel-close" role="button" data-toggle="collapse"
+                   data-target="#PowerPoint"><span class="esri-icon esri-icon-close"
+                                                      aria-hidden="true"></span></a>
+            </div>
+        </div>
+        <div id="collapsePowerPoint" class="panel-collapse collapse" role="tabpanel"
+             aria-labelledby="headingPowerPoint">
+            <div class="panel-body"  >
+                <div id="banner" >
+                    <div class="pic" id="pic1">
+                        <a href="#" style="display:block"><img class="img1" src="picture/libary/1.jpg"/></a>
+                        <a href="#"><img class="img1" src="picture/tiyuguan/33.jpg"></a>
+                        <a href="#"><img class="img1" src="picture/jiaoxuelou/信息楼.jpg"></a>
+                        <a href="#"><img class="img1" src="picture/jiaoxuelou/语林楼.jpg"></a>
+                        <a href="#"><img class="img1" src="picture/jiaoxuelou/仁和楼.jpg"></a>
+                        <a href="#"><img class="img1" src="picture/xinxilou/B202.jpg"></a>
+                    </div>
+                    <div class="btn1">
+                        <ul>
+                            <li class="one">1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                            <li>6</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!--Hawkeye-->
+    <div id="Hawkeye" class="panel collapse">
+        <div id="headingHawkeye" class="panel-heading" role="tab">
+            <div class="panel-title">
+                <a class="panel-toggle collapsed" role="button" data-toggle="collapse"
+                   href="#collapseHawkeye" aria-expanded="false" aria-controls="collapseHawkeye"><span
+                        class="glyphicon glyphicon-map-marker" aria-hidden="true"></span><span
+                        class="panel-label">鹰眼</span></a>
+                <a class="panel-close" role="button" data-toggle="collapse"
+                   data-target="#Hawkeye"><span class="esri-icon esri-icon-close"
+                                                   aria-hidden="true"></span></a>
+            </div>
+        </div>
+
+        <div id="collapseHawkeye" class="panel-collapse collapse" role="tabpanel"
+             aria-labelledby="headingHawkeyeHistory">
+            <div class="panel-body"  style="padding: 0;margin: 0">
+                <ul class="parentWrap">
+                    <li class="menuGroup">
+                        <span class="groupTitle">实时监控</span>
+                        <div id="RealTime" class="div1">
+                            <b>在线人员</b>
+                            <ul>
+                                <li class="RealTimeli">1</li>
+                            </ul>
+                        </div>
+                        <div id="RealTimeDetail" class="div2">
+                            我是显示信息的
+                        </div>
+                    </li>
+                    <li class="menuGroup">
+                        <span class="groupTitle">历史轨迹</span>
+                        <div id="History" class="div1">
+                            <div class="form-group">
+                                <span style="text-align: center;font-size: 13px;color: #000;font-weight: bold" class="form-title">选择时间：</span>
+                                <input type="datetime-local" style="margin-top:8px;text-align: left;font-size: 10px;color: #000;width: 120px"/>--
+                                <input type="datetime-local" style="margin-top:8px;text-align: left;font-size: 10px;color: #000;width: 120px"/>
+                            </div>
+                            <div class="form-group" style="text-align: left;margin-left: 16px">
+                                <form action="" method="post">
+                                    <span style="font-size: 13px;color: #000;font-weight: bold" class="form-title">选择人物：</span>
+                                    <label class="labelcheck"><input name="people" type="checkbox" value="" />张三 </label>
+                                    <label ><input name="people" type="checkbox" value="" />李四 </label>
+                                    <label ><input name="people" type="checkbox" value="" />王五 </label>
+                                    <label ><input name="people" type="checkbox" value="" />赵六 </label>
+                                </form>
+                            </div>
+                        </div>
+                        <div id="HistoryDetail" class="div2">
+                            我是详情
+                        </div>
+                    </li>
+
+
+                </ul>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+</div>
+<!--导航条控制-->
+<script src="js/ControlView.js"></script>
+<!--时钟控件-->
+<div id="clock"></div>
+
+</body>
+</html>

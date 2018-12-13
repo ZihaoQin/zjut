@@ -1,0 +1,67 @@
+// ┌────────────────────────────┐
+// │ Calcie Panel - Theme Light │
+// └────────────────────────────┘
+//
+// Light background, dark text (defaults)
+// Text color, hover and background for panels and controls
+  
+.calcite-panels {
+  
+  &.calcite-bg-light {
+
+    .panel-heading {
+      background-color: $theme_light_panel_header_bg;
+    }
+
+    .panel-heading:hover {
+      background-color: $theme_light_panel_header_bg_hover;
+    }
+
+  }
+
+  &.calcite-text-dark {
+
+    // .panel {
+    //   color: $theme_light_panel_text_color;
+    // }
+
+    // Header
+
+    .panel-heading {
+      color: $theme_light_panel_header_text_color;
+    }
+
+    // Toggle header
+
+    .panel-toggle {
+      color: $theme_light_panel_header_text_color;
+    }
+
+    .panel-toggle:focus,
+    .panel-toggle:hover {
+      color: $theme_light_panel_header_text_color;
+    }
+
+    // Close
+    
+    .panel-close {
+      color: $theme_light_panel_header_close_color;
+    }
+    
+    .panel-close:focus,
+    .panel-close:hover {
+      color: $theme_light_panel_header_text_color_hover;
+    }
+    
+  }
+}
+
+@media (max-width: $panels_breakpoint_width_mobile) {
+  .calcite-nav-bottom {
+    .calcite-bg-light {
+      .panel-body {
+        border-bottom: 1px solid $theme_light_panel_header_bg;
+      }
+    }
+  }  
+}

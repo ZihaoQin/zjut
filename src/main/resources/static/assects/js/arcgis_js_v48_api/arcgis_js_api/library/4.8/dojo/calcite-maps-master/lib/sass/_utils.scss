@@ -1,0 +1,52 @@
+// ┌───────┐
+// │ Utils │
+// └───────┘
+//
+// Generic and multi-use styles
+
+
+// Popup and panel
+
+.calcite-index-top {
+  z-index: 100;  
+}
+
+.calcite-index-bottom {
+  z-index: auto;  
+}
+
+.calcite-overflow-visible {
+	overflow: visible;
+}
+
+.calcite-overflow-hidden {
+	overflow: hidden;
+}
+
+// Buttons
+
+.calcite-btn-noborder {
+	border: none;
+}
+
+// Full width
+
+.calcite-width-full {
+  width: 100%;
+}
+
+.visible-xs-flex {
+   display: none !important;
+}
+
+@media (max-width: 767px) {
+	.visible-xs-flex {
+	   display: flex !important;
+	}
+}
+
+@media (min-width: 769px) {
+	.visible-mobile-only {
+		display: none !important;
+	}
+}

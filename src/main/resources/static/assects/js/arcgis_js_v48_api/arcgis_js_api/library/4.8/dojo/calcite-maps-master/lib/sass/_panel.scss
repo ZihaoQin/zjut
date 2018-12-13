@@ -1,0 +1,267 @@
+// ┌───────────────┐
+// │ Calicte Panel │
+// └───────────────┘
+//
+// Styling for panels, panel, title and body
+
+.calcite-panels {
+  z-index: 2; // above widgets, below popup
+
+  &.panel-group {
+    margin-bottom: 0;
+  }
+
+  .panel {
+    margin-top: 0;
+    border: none;
+    border-radius: 0;
+    font-size: $panel_font_size;
+    // background-color: inherit; //test
+  }
+
+  .panel + .panel {
+    margin-top: 0;
+  }
+
+  // Heading
+  
+  .panel-heading {
+    padding: 0;
+    border-radius: 0;
+    background-color: inherit; //test
+  }
+
+  .panel-title {
+    display: flex;
+    height: $panel_title_height;
+    font-size: $panel_title_font_size;
+    font-weight: $panel_title_font_weight;  
+  }
+
+  .panel-label {
+    display: inline-block;
+    padding-left: 5px;
+  }
+
+  .panel-toggle {
+    flex: 1;
+    padding: 7px 0px 0 10px;
+    text-decoration: none;
+    min-width: $panel_title_height - 1;
+    .glyphicon {
+      top: 1px;
+      margin: 0;
+      padding-right: 2px;
+      font-size: $panel_font_size;
+    }
+  }
+
+  .panel-close {
+    padding: 9px 10px 0;
+    font-size: $panel_font_size;
+    text-decoration: none;
+    .esri-icon.esri-icon-close {
+      font-size: $panel_font_size;
+    }
+  }
+
+  // Body - specific Bootstrap overrides for map apps
+
+  .panel-overflow-hidden {
+    overflow: hidden;
+  }
+
+  .panel-heading + .panel-collapse > .panel-body {
+    border-top: none;
+  }
+
+  .panel-body {
+    padding: 15px;
+    width: $panel_body_width;
+    min-height: $panel_body_min_height;
+    max-height: $panel_body_max_height;
+    font-size: $panel_font_size;
+    overflow-x: hidden;
+
+    .form-control {
+      height: $panel_form_control_height;
+      padding: 4px 8px;
+    }
+
+    select.form-control {
+      padding: 4px 22px 4px 8px;
+    }
+
+    .calcite-form-title {
+      padding: 20px 0 5px;
+    }
+    .calcite-form-padding {
+      padding: 15px 0 0;
+    }
+    .nav-tabs > li > a {
+      padding: 6px 12px 4px;
+      border-top: 1px solid transparent;
+    }
+    .nav-tabs > li > a:hover,
+    .nav-tabs > li > a:focus, {
+      padding-top: 5px;
+      border-top: 2px solid;
+      border-bottom-color: transparent;
+    }
+
+    a {
+     color: $theme_light_link_color;
+    }
+    a:hover {
+     color: $theme_light_link_color_hover;
+    }
+  }
+  
+  // Elements formatted slightly smaller for map apps
+
+  .panel-body {
+    
+    background-color: white; // All themes!
+
+    .panel {
+      color: $theme_dark_panel_text_color;
+    }
+
+    button {
+      font-size: $panel_font_size;
+    }
+
+    input, 
+    select, 
+    textarea,
+    select {
+      font-size: $panel_font_size;
+      color: $theme_light_control_text_color;
+    }
+
+    select {
+      -webkit-appearance: none;
+      appearance: none;
+      -moz-appearance: none;
+      background-position: center right;
+      background-repeat: no-repeat;
+      background-size: 18px;
+      outline: none;
+      padding-right: 22px;
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PGcgZmlsbD0iIzU5NTk1OSI+PHBhdGggZD0iTTU2Ljc1IDM3LjQ2NmMuNDI1LjQyNS41NTIgMS4wNjMuMzIyIDEuNjE4LS4yMy41NTUtLjc3LjkxNi0xLjM3Mi45MTZINi4zYy0uNiAwLTEuMTQzLS4zNjItMS4zNzItLjkxNy0uMjMtLjU1NS0uMTAzLTEuMTkzLjMyMi0xLjYxOGwyMy40NC0yMy40NGMxLjI3Ni0xLjI3NiAzLjM0My0xLjI3NiA0LjYyIDBsMjMuNDQgMjMuNDR6TTUuMjUgNjIuNTM0Yy0uNDI2LS40MjUtLjU1My0xLjA2My0uMzIzLTEuNjE4LjIzLS41NTUuNzctLjkxNiAxLjM3LS45MTZoNDkuNDA0Yy42MDIgMCAxLjE0My4zNiAxLjM3My45MTYuMjMuNTU1LjEwMyAxLjE5My0uMzIyIDEuNjE4TDMzLjMxIDg1Ljk3N2MtMS4yNzUgMS4yNzUtMy4zNDQgMS4yNzQtNC42MiAwTDUuMjUgNjIuNTM0eiIvPjwvZz48L3N2Zz4=");
+    }
+
+    // IE
+    select::-ms-expand {
+      display: none;
+    }
+
+    .nav-tabs {
+      border-bottom: 1px solid $theme_light_control_border_color;
+    }
+
+    .nav-tabs > li > a:hover,
+    .nav-tabs > li > a:focus {
+      background-color: transparent;
+      border-top-color: $theme_light_control_border_color_hover;
+      border-left: 1px solid transparent;
+      border-right: 1px solid transparent;
+    }
+
+    .nav-tabs > li.active > a {
+      background-color: $theme_light_control_bg_active;
+      border-color: $theme_light_control_border_color;
+      border-top-color: $theme_light_control_border_color_hover;
+      border-bottom-color: transparent;
+      border-top-width: 2px;
+      padding-top: 5px;
+    }
+
+  }
+
+  // Auto expand
+
+  .calcite-body-expander {
+    min-height: $panel_body_min_height;
+    -webkit-transition: min-height 0.25s ease-out;
+    -o-transition: min-height 0.25s ease-out;
+    transition: min-height 0.25s ease-out;
+  }
+
+  .calcite-body-expander:focus,
+  .calcite-body-expander:hover {
+    min-height: $panel_body_max_height_expanded;
+    -webkit-transition: min-height 0.25s ease-out;
+    -o-transition: min-height 0.25s ease-out;
+    transition: min-height 0.25s ease-out;
+  }
+
+  // Expand
+
+  .calcite-body-expanded {
+    height: $panel_body_max_height_expanded;
+    -webkit-transition: height 0.25s ease-out;
+    -o-transition: height 0.25s ease-out;
+    transition: height 0.25s ease-out;
+  }
+
+  // Panel animation (entire panel)
+
+  .panel.collapsing {
+    // -webkit-transition: none;
+    // transition: none;
+    -webkit-transition: height 0.01s ease-out;
+    -o-transition: height 0.01s ease-out;
+    transition: height 0.01s ease-out;
+  }
+
+  // Panel body animation
+
+  .panel-collapse.collapsing {
+    -webkit-transition: height 0.35s ease-out;
+    -o-transition: height 0.35s ease-out;
+    transition: height 0.35s ease-out;
+  }
+}
+
+// Mobile screens
+
+@media (max-width: $panels_breakpoint_width_mobile) { 
+  .calcite-panels {
+    .panel-body {
+      width: $panel_body_width_mobile;
+    }
+  }
+}
+
+@media (min-height: $panels_breakpoint_height_md) { 
+  .calcite-panels {
+    .panel-body {
+      max-height: $panel_body_height_md;
+    }
+  }
+}
+
+@media (max-height: $panels_breakpoint_height_sm) { 
+  .calcite-panels {
+    .panel-body {
+      max-height: $panel_body_height_sm;
+    }
+  }
+}
+
+@media (max-height: $panels_breakpoint_height_xs) { 
+  .calcite-panels {
+    .panel-body {
+      max-height: $panel_body_height_xs;
+    }
+  }
+}
+
+@media (max-height: $panels_breakpoint_height_xxs) { 
+  .calcite-panels {
+    .panel-body {
+      max-height: $panel_body_height_xxs;
+    }
+  }
+}

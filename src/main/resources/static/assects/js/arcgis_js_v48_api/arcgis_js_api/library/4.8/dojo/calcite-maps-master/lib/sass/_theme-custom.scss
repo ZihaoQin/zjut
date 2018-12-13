@@ -1,0 +1,84 @@
+// ┌────────────────┐
+// │ Theme - Custom │
+// └────────────────┘
+//
+// Style overrides for custom background colors for entire ui
+
+
+// Navbar
+
+// .calcite-navbar {
+
+//   &.calcite-bg-custom {
+
+//     &.navbar {
+//       //background-color: $theme_custom_navbar_bg;
+//     }
+
+//   }
+// }
+
+// Dropdown
+
+.calcite-dropdown {
+
+  &.calcite-bg-custom {
+
+    // .dropdown-menu::before {
+    //   content: "";
+    //   background-image: linear-gradient(rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.1));
+    //   width: 100%;
+    //   height: 100%;
+    //   position: absolute;
+    //   z-index: -1;
+    // }
+
+    .dropdown-menu {
+      background-color: $theme_custom_dropdown_menu_bg;
+      -webkit-box-shadow: $theme_custom_dropdown_menu_shadow;
+      box-shadow: $theme_custom_dropdown_menu_shadow;
+
+      li > a:hover, 
+      li > a:focus {
+        background-color: $theme_custom_dropdown_menu_bg_hover;
+      }
+
+      .active > a, 
+      .active > a:hover, 
+      .active > a:focus {
+        background-color: $theme_custom_dropdown_menu_bg_hover;
+      }  
+    }
+  }
+}
+
+// Panels
+
+.calcite-panels {
+    
+  &.calcite-bg-custom {
+
+    .panel {
+      //background-color: $theme_custom_panel_bg;
+      background-color: transparent;
+    }
+
+    .panel-heading {
+      background-color: $theme_custom_panel_header_bg;
+    }
+
+    .panel-heading:hover,
+    .panel-heading:focus {
+      background-color: $theme_custom_panel_header_bg_hover;
+    }
+
+  }
+}
+
+.calcite-nav-bottom {
+  .calcite-bg-custom {
+    .panel-body {
+      border-bottom: 1px solid $theme_custom_panel_header_bg;
+    }
+  }
+}

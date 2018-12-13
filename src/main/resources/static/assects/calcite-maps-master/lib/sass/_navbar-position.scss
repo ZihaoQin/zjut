@@ -1,0 +1,55 @@
+// ┌───────────────────────────┐
+// │ Calcite Navbar - Position │
+// └───────────────────────────┘
+//
+// Styles for nav positions
+
+// Nav top
+
+.calcite-nav-top {
+  top: 0;
+  bottom: auto;
+}
+
+// Nav bottom 
+
+.calcite-nav-bottom {  
+  top: auto;
+  bottom: 0;
+}
+
+// Fixed map offset - top
+
+.calcite-nav-top-fixed, 
+.calcite-nav-top-fixed .calcite-map-absolute {
+  top: $navbar_height;
+  bottom: 0;
+}
+
+// Fixed map offset - bottom
+
+.calcite-nav-bottom-fixed,
+.calcite-nav-bottom-fixed .calcite-map-absolute {
+  top: 0;
+  bottom: $navbar_height;
+}
+
+// Top margin
+
+.calcite-margin-top .calcite-navbar {
+  margin-top: $navbar_margin;
+  margin-bottom: 0;
+}
+
+// Bottom margin
+
+.calcite-margin-bottom .calcite-navbar {
+  margin-top: 0;
+  margin-bottom: $navbar_margin;
+}
+
+// All margin
+
+.calcite-margin-all .calcite-navbar {
+  margin: $navbar_margin;
+}
